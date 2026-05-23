@@ -36,10 +36,18 @@ botoesGorjeta.forEach(botao => {
 
 })
 
-function receberPorgentagem(evento) {
+function receberPorgentagemBotao(evento) {
+    botoesGorjeta.forEach(botao =>  { 
+        botao.classList.remove("botao-ativo")
 
-    console.log(evento.target.value)
-   //porgentagem = Number(evento.target.value) / 100
-   //console.log(porgentagem)
+        if(botao.value === evento.target.value){
+            botao.classList.add("botao-ativo")
+        }
+
+    })
+
+    
+    porgentagem = parseFloat(evento.target.value) / 100
+
 }
 
